@@ -7,4 +7,31 @@ public class ClienteObserver implements Observer{
     public ClienteObserver(String nombre) {
         this.nombre = nombre;
     }
+    @Override
+    public void actualizar(String evento, String datos) {
+        System.out.println("CLIENTE: " + nombre + " Notificación recibida");
+    switch (evento) {
+            case "PEDIDO_CREADO":
+                System.out.println("Su pedido ha sido registrado exitosamente");
+                System.out.println("Detalles: " + datos);
+                break;
+                
+            case "FACTURA_GENERADA":
+                System.out.println("Su factura electrónica ha sido generada");
+                System.out.println("  " + datos);
+                break;
+                
+            case "PEDIDO_PROCESADO":
+                System.out.println("Su pedido está siendo procesado");
+                System.out.println(" " + datos);
+                break;
+                
+            default:
+                System.out.println("Evento: " + evento + " - " + datos);
+        }   
+     
+    }
+  public String getNombre() {
+        return nombre;
+    }  
 }
