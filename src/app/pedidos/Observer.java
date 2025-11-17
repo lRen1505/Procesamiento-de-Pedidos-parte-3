@@ -2,6 +2,6 @@
 package app.pedidos;
 
 
-public class Observer {
+public interface Observer {
     
 }
