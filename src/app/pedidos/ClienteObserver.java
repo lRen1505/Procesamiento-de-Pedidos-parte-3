@@ -2,6 +2,6 @@
 package app.pedidos;
 
 
-public class ClienteObserver {
+public class ClienteObserver implements Observer{
     
 }
