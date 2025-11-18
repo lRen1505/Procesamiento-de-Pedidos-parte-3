@@ -41,6 +41,14 @@ public class NotificadorThread extends Thread{
                 activo = false;
             }
         }
-         System.out.println("\n🧵 [" + getName() + "] Finalizado\n");
+         System.out.println("\n [" + getName() + "] Finalizado\n");
+    }
+    public void agregarNotificacion(String mensaje) {
+        try {
+            notificacionesPendientes.put(mensaje);
+            System.out.println("Notificación agregada a la cola");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
