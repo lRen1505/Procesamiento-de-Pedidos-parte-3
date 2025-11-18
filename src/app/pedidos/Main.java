@@ -28,10 +28,10 @@ public class Main {
             observable.agregarObservador(logObserver);
             
             pedidoFacade.setObservable(observable);
-            System.out.println("\n✓ Patrón Observer configurado\n");
+            System.out.println("\n Patrón Observer configurado\n");
             System.out.println("=".repeat(70) + "\n");
             
-            System.out.println("🧵 Creando Threads...\n");
+            System.out.println("Creando Threads...\n");
             
                 ProcesadorPedidosThread threadPedidos = new ProcesadorPedidosThread(
                 pedidoFacade, observable);
