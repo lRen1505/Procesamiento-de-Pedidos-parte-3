@@ -22,6 +22,8 @@ public class GeneradorFacturasThread extends Thread {
         while (activo) {
         try {
             DatosFactura datos = facturasPendientes.take();
+            System.out.println("\n [" + getName() + "] Generando factura para: " + datos.getCliente());
+            Thread.sleep(800);
         }catch(InterruptedException e){
         }
       }
