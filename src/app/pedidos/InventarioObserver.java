@@ -5,7 +5,7 @@ package app.pedidos;
 public class InventarioObserver implements Observer {
     @Override
     public void actualizar(String evento, String datos) {
-        System.out.println("Notificación recibida");
+        System.out.println("Notificacion recibida");
         switch (evento) {
             case "PEDIDO_CREADO":
                 System.out.println(" Reservando stock para el pedido");
