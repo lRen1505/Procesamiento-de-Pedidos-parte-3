@@ -44,6 +44,11 @@ public class Main {
             threadPedidos.start();
             threadFacturas.start();
             threadNotificador.start();
+            
+            System.out.println("Threads iniciados correctamente\n");
+            System.out.println("=".repeat(70) + "\n");
+            
+            Thread.sleep(1000);
     }
     
     }
