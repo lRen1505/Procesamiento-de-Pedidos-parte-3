@@ -10,5 +10,16 @@ public class DatosFactura {
         this.cliente = cliente;
         this.total = total;
     }
-
+    public String getCliente() {
+        return cliente;
+    }
+    
+    public double getTotal() {
+        return total;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Cliente: %s, Total: S/. %.2f", cliente, total);
+    }
 }
