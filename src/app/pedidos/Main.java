@@ -56,6 +56,17 @@ public class Main {
             threadPedidos.agregarPedido(new DatosPedido("María García", "Mouse Logitech", 3));
             Thread.sleep(500);
             threadPedidos.agregarPedido(new DatosPedido("Carlos López", "Teclado Mecánico", 1));
+            
+            System.out.println("\n Agregando facturas a la cola...\n");
+            threadFacturas.agregarFactura(new DatosFactura("Ana Torres", 250.50));
+            Thread.sleep(500);
+            
+            threadFacturas.agregarFactura(new DatosFactura("Luis Ramírez", 180.00));
+            
+            System.out.println("\n Agregando notificaciones a la cola...\n");
+            threadNotificador.agregarNotificacion("Su pedido ha sido confirmado");
+            Thread.sleep(500);
+            
     }catch(InterruptedException e){
     }
     
