@@ -54,6 +54,14 @@ public class ProcesadorPedidosThread extends Thread{
             }
         }
         
-        System.out.println("\n🧵 [" + getName() + "] Finalizado\n");
+        System.out.println("\n [" + getName() + "] Finalizado\n");
+    }
+    public void agregarPedido(DatosPedido datos) {
+        try{
+            pedidosPendientes.put(datos);
+            System.out.println("✓ Pedido agregado a la cola: " + datos.getCliente());
+        }catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
