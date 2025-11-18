@@ -22,6 +22,10 @@ public class Main {
             ClienteObserver clienteObserver = new ClienteObserver("Juan Pérez");
             InventarioObserver inventarioObserver = new InventarioObserver();
             LogObserver logObserver = new LogObserver();
+            
+            observable.agregarObservador(clienteObserver);
+            observable.agregarObservador(inventarioObserver);
+            observable.agregarObservador(logObserver);
     }
     
     }
