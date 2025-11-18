@@ -22,22 +22,22 @@ public class GeneradorFacturasThread extends Thread {
         while (activo) {
         try {
             DatosFactura datos = facturasPendientes.take();
-            System.out.println("\n [" + getName() + "] Generando factura para: " + datos.getCliente());
+            System.out.println("\n " + getName() + " Generando factura para: " + datos.getCliente());
             Thread.sleep(800);
             facturaService.generarFactura(datos.getCliente(), datos.getTotal());
             observable.notificarObservadores("FACTURA_GENERADA", datos.toString());
-            System.out.println("\n [" + getName() + "] Factura generada exitosamente\n");
+            System.out.println("\n " + getName() + " Factura generada exitosamente\n");
         }catch(InterruptedException e){
-            System.out.println("\n🧵 [" + getName() + "] Interrumpido");
+            System.out.println("\n " + getName() + " Interrumpido");
             activo = false;
         }
       }
-        System.out.println("\n [" + getName() + "] Finalizado\n");
+        System.out.println("\n " + getName() + " Finalizado\n");
     }
     public void agregarFactura(DatosFactura datos) {
         try {
             facturasPendientes.put(datos);
-            System.out.println("✓ Factura agregada a la cola: " + datos.getCliente());
+            System.out.println("Factura agregada a la cola: " + datos.getCliente());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

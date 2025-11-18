@@ -44,7 +44,7 @@ public class ProcesadorPedidosThread extends Thread{
                 // Notificar que el pedido fue creado
                 observable.notificarObservadores("PEDIDO_CREADO", datos.toString());
                 
-                System.out.println("\n [" + getName() + "] ✓ Pedido completado\n");
+                System.out.println("\n [" + getName() + "] Pedido completado\n");
                 System.out.println(resultado);
                 
             } catch (InterruptedException e) {
@@ -59,7 +59,7 @@ public class ProcesadorPedidosThread extends Thread{
     public void agregarPedido(DatosPedido datos) {
         try{
             pedidosPendientes.put(datos);
-            System.out.println("✓ Pedido agregado a la cola: " + datos.getCliente());
+            System.out.println("Pedido agregado a la cola: " + datos.getCliente());
         }catch (InterruptedException e) {
             e.printStackTrace();
         }

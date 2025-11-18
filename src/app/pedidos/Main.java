@@ -15,11 +15,11 @@ public class Main {
             FacturaService facturaService = new FacturaAdapter(legacySystem);
             PedidoFacade pedidoFacade = new PedidoFacade(facturaService, pedidoRepository);
             pedidoFacade.setImpuestoStrategy(new IGV18Strategy());
-            System.out.println("\n Configurando Patrón Observer...\n");
+            System.out.println("\n Configurando Patron Observer...\n");
             
             PedidoObservable observable = new PedidoObservable();
             
-            ClienteObserver clienteObserver = new ClienteObserver("Juan Pérez");
+            ClienteObserver clienteObserver = new ClienteObserver("Juan Perez");
             InventarioObserver inventarioObserver = new InventarioObserver();
             LogObserver logObserver = new LogObserver();
             
@@ -53,7 +53,7 @@ public class Main {
             System.out.println("Agregando pedidos a la cola de procesamiento...\n");
             threadPedidos.agregarPedido(new DatosPedido("Juan Perez", "Laptop HP", 2));
             Thread.sleep(500);
-            threadPedidos.agregarPedido(new DatosPedido("Maria García", "Mouse Logitech", 3));
+            threadPedidos.agregarPedido(new DatosPedido("Maria Garcia", "Mouse Logitech", 3));
             Thread.sleep(500);
             threadPedidos.agregarPedido(new DatosPedido("Carlos Lopez", "Teclado Mecanico", 1));
             

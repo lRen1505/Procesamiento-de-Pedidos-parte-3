@@ -9,7 +9,7 @@ public class ClienteObserver implements Observer{
     }
     @Override
     public void actualizar(String evento, String datos) {
-        System.out.println("CLIENTE: " + nombre + " Notificación recibida");
+        System.out.println("CLIENTE: " + nombre + " Notificacion recibida");
     switch (evento) {
             case "PEDIDO_CREADO":
                 System.out.println("Su pedido ha sido registrado exitosamente");
@@ -17,12 +17,12 @@ public class ClienteObserver implements Observer{
                 break;
                 
             case "FACTURA_GENERADA":
-                System.out.println("Su factura electrónica ha sido generada");
+                System.out.println("Su factura electronica ha sido generada");
                 System.out.println("  " + datos);
                 break;
                 
             case "PEDIDO_PROCESADO":
-                System.out.println("Su pedido está siendo procesado");
+                System.out.println("Su pedido esta siendo procesado");
                 System.out.println(" " + datos);
                 break;
                 
