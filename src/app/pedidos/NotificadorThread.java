@@ -16,14 +16,14 @@ public class NotificadorThread extends Thread{
     }
     @Override
     public void run() {
-        System.out.println("\n [" + getName() + "] Iniciado - Esperando notificaciones...\n");
+        System.out.println("\n " + getName() + " Iniciado - Esperando notificaciones...\n");
         
         while (activo) {
             try {
                 // Toma una notificación de la cola
                 String mensaje = notificacionesPendientes.take();
                 
-                System.out.println("\n [" + getName() + "] Enviando notificación...");
+                System.out.println("\n [" + getName() + "] Enviando notificacion...");
                 
                 // Simular tiempo de envío (email, SMS, etc.)
                 Thread.sleep(500);
@@ -31,7 +31,7 @@ public class NotificadorThread extends Thread{
                 // Enviar notificación (simulado)
                 System.out.println("Email enviado");
                 System.out.println("SMS enviado");
-                System.out.println("Push notification enviada");
+                System.out.println("Push notificacion enviada");
                 System.out.println("Mensaje: " + mensaje);
                 
                 System.out.println("\n [" + getName() + "] Notificaciones enviadas\n");
@@ -46,7 +46,7 @@ public class NotificadorThread extends Thread{
     public void agregarNotificacion(String mensaje) {
         try {
             notificacionesPendientes.put(mensaje);
-            System.out.println("Notificación agregada a la cola");
+            System.out.println("Notificacion agregada a la cola");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
