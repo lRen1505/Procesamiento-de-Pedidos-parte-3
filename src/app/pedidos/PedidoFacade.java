@@ -11,6 +11,7 @@ public class PedidoFacade {
     private FacturaService facturaService;
     private PedidoRepository pedidoRepository;
     private ImpuestoStrategy impuestoStrategy;
+    private PedidoObservable observable; 
     
     public PedidoFacade(FacturaService facturaService, PedidoRepository pedidoRepository) {
         this.validacionService = new ValidacionService();
