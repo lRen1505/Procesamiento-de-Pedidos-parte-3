@@ -34,4 +34,12 @@ public class GeneradorFacturasThread extends Thread {
       }
         System.out.println("\n [" + getName() + "] Finalizado\n");
     }
+    public void agregarFactura(DatosFactura datos) {
+        try {
+            facturasPendientes.put(datos);
+            System.out.println("✓ Factura agregada a la cola: " + datos.getCliente());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
