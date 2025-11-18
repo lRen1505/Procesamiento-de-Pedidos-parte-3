@@ -28,6 +28,8 @@ public class GeneradorFacturasThread extends Thread {
             observable.notificarObservadores("FACTURA_GENERADA", datos.toString());
             System.out.println("\n [" + getName() + "] Factura generada exitosamente\n");
         }catch(InterruptedException e){
+            System.out.println("\n🧵 [" + getName() + "] Interrumpido");
+            activo = false;
         }
       }
     }
