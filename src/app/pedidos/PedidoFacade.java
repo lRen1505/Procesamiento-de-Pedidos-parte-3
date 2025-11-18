@@ -32,7 +32,9 @@ public class PedidoFacade {
     }
     public String procesarPedido(String cliente, String producto, int cantidad) {
         System.out.println("\n===== INICIANDO PROCESO DE PEDIDO =====\n");
-        
+        System.out.println(" Estrategia de impuesto activa: " + 
+                         impuestoStrategy.getNombre());
+        System.out.println();    
         
         if (!validacionService.validarCantidad(cantidad)) {
             return "ERROR: La cantidad debe ser positiva";
