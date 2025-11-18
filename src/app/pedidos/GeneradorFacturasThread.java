@@ -18,6 +18,12 @@ public class GeneradorFacturasThread extends Thread {
     }
     @Override
     public void run() {
-    
+        System.out.println("\n[" + getName() + "] Iniciado - Esperando facturas...\n");
+        while (activo) {
+        try {
+            
+        }catch(InterruptedException e){
+        }
+      }
     }
 }
