@@ -79,6 +79,10 @@ public class Main {
             System.out.println("Deteniendo threads...");
             System.out.println("=".repeat(70) + "\n");
             
+            threadPedidos.detener();
+            threadFacturas.detener();
+            threadNotificador.detener();
+            
     }catch(InterruptedException e){
     }
     
