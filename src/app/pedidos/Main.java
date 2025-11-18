@@ -49,6 +49,10 @@ public class Main {
             System.out.println("=".repeat(70) + "\n");
             
             Thread.sleep(1000);
+            
+            System.out.println("Agregando pedidos a la cola de procesamiento...\n");
+            threadPedidos.agregarPedido(new DatosPedido("Juan Pérez", "Laptop HP", 2));
+            Thread.sleep(500);
     }
     
     }
