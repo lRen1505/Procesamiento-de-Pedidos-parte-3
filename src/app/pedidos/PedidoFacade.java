@@ -56,7 +56,6 @@ public class PedidoFacade {
        Pedido pedido = new Pedido(cliente, producto, cantidad, subtotal, igv, total);
        pedidoRepository.guardar(pedido);
         System.out.println();
-        registroService.registrarPedido(cliente, producto, cantidad);
         System.out.println();
         String comprobante = comprobanteService.generarComprobante(
             cliente, producto, subtotal, igv, total
