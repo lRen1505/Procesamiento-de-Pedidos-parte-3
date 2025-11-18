@@ -72,6 +72,7 @@ public class Main {
             System.out.println("\n" + "=".repeat(70));
             System.out.println("Esperando que los threads procesen las tareas...");
             System.out.println("=".repeat(70) + "\n");
+            Thread.sleep(8000);
             
     }catch(InterruptedException e){
     }
