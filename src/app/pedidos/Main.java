@@ -67,6 +67,12 @@ public class Main {
             threadNotificador.agregarNotificacion("Su pedido ha sido confirmado");
             Thread.sleep(500);
             
+            threadNotificador.agregarNotificacion("Su factura está lista para descargar");
+            
+            System.out.println("\n" + "=".repeat(70));
+            System.out.println("Esperando que los threads procesen las tareas...");
+            System.out.println("=".repeat(70) + "\n");
+            
     }catch(InterruptedException e){
     }
     
