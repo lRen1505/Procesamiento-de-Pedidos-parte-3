@@ -9,4 +9,11 @@ public class ProcesadorPedidosThread extends Thread{
     private PedidoObservable observable;
     private BlockingQueue<DatosPedido> pedidosPendientes;
     private volatile boolean activo = true; 
+    
+    public ProcesadorPedidosThread(PedidoFacade pedidoFacade, PedidoObservable observable) {
+        this.pedidoFacade = pedidoFacade;
+        this.observable = observable;
+        this.pedidosPendientes = new LinkedBlockingQueue<>();
+        this.setName("Thread-ProcesadorPedidos");
+    }
 }
