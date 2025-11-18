@@ -83,6 +83,10 @@ public class Main {
             threadFacturas.detener();
             threadNotificador.detener();
             
+            threadPedidos.join(2000);
+            threadFacturas.join(2000);
+            threadNotificador.join(2000);
+            
     }catch(InterruptedException e){
     }
     
