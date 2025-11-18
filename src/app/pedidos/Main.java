@@ -53,6 +53,9 @@ public class Main {
             System.out.println("Agregando pedidos a la cola de procesamiento...\n");
             threadPedidos.agregarPedido(new DatosPedido("Juan Pérez", "Laptop HP", 2));
             Thread.sleep(500);
+            threadPedidos.agregarPedido(new DatosPedido("María García", "Mouse Logitech", 3));
+            Thread.sleep(500);
+            threadPedidos.agregarPedido(new DatosPedido("Carlos López", "Teclado Mecánico", 1));
     }
     
     }
