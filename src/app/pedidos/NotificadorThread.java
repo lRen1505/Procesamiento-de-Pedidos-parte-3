@@ -41,5 +41,6 @@ public class NotificadorThread extends Thread{
                 activo = false;
             }
         }
+         System.out.println("\n🧵 [" + getName() + "] Finalizado\n");
     }
 }
