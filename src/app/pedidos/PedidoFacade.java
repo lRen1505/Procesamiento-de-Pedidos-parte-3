@@ -22,6 +22,9 @@ public class PedidoFacade {
         this.pedidoRepository = pedidoRepository;
         this.impuestoStrategy = new IGV18Strategy();
     }
+        public void setObservable(PedidoObservable observable) {
+        this.observable = observable;
+    }
     public void setImpuestoStrategy(ImpuestoStrategy impuestoStrategy) {
         this.impuestoStrategy = impuestoStrategy;
         System.out.println(" Estrategia de impuesto cambiada a: " + 
