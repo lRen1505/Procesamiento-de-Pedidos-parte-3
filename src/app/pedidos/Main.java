@@ -32,6 +32,14 @@ public class Main {
             System.out.println("=".repeat(70) + "\n");
             
             System.out.println("🧵 Creando Threads...\n");
+            
+                ProcesadorPedidosThread threadPedidos = new ProcesadorPedidosThread(
+                pedidoFacade, observable);
+                        
+                GeneradorFacturasThread threadFacturas = new GeneradorFacturasThread(
+                facturaService, observable);
+                
+                NotificadorThread threadNotificador = new NotificadorThread(observable);
     }
     
     }
