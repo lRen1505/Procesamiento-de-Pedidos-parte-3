@@ -87,8 +87,29 @@ public class Main {
             threadFacturas.join(2000);
             threadNotificador.join(2000);
             
+             System.out.println("=== CONSULTA DE PEDIDOS, THREADS Y CONCURRENCIA  ===\n");
+          
+            
+            System.out.println("FACADE: PedidoFacade coordina servicios");
+            System.out.println("ADAPTER: FacturaAdapter integra sistema legacy");
+            System.out.println("STRATEGY: Cálculo dinámico de impuestos");
+            System.out.println("REPOSITORY: Persistencia de pedidos");
+            System.out.println("OBSERVER: Notificaciones automáticas a 3 observadores");
+            System.out.println("THREADS: 3 hilos trabajando concurrentemente");
+            System.out.println("  - Thread 1: Procesador de Pedidos");
+            System.out.println("  - Thread 2: Generador de Facturas");
+            System.out.println("  - Thread 3: Notificador");
+            
+            System.out.println("\nTotal de pedidos procesados: " + 
+                             pedidoRepository.contarPedidos());
+            
+            System.out.println("\n" + "=".repeat(70));
+            System.out.println(" Programa finalizado exitosamente");
+            System.out.println("=".repeat(70) + "\n");
+            
     }catch(InterruptedException e){
-    }
-    
+        System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
