@@ -6,7 +6,6 @@ import java.util.List;
 public class PedidoFacade {
     private ValidacionService validacionService;
     private CalculoService calculoService;
-    
     private ComprobanteService comprobanteService;
     private FacturaService facturaService;
     private PedidoRepository pedidoRepository;
@@ -56,6 +55,8 @@ public class PedidoFacade {
        Pedido pedido = new Pedido(cliente, producto, cantidad, subtotal, igv, total);
        pedidoRepository.guardar(pedido);
         System.out.println();
+        System.out.println();
+        facturaService.generarFactura(cliente, total);
         System.out.println();
         String comprobante = comprobanteService.generarComprobante(
             cliente, producto, subtotal, igv, total
