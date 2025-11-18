@@ -2,6 +2,6 @@
 package app.pedidos;
 
 
-public class GeneradorFacturasThread {
+public class GeneradorFacturasThread extends Thread {
     
 }
