@@ -67,7 +67,7 @@ public class Main {
             threadNotificador.agregarNotificacion("Su pedido ha sido confirmado");
             Thread.sleep(500);
             
-            threadNotificador.agregarNotificacion("Su factura está lista para descargar");
+            threadNotificador.agregarNotificacion("Su factura esta lista para descargar");
             
             System.out.println("\n" + "=".repeat(70));
             System.out.println("Esperando que los threads procesen las tareas...");
@@ -92,9 +92,9 @@ public class Main {
             
             System.out.println("FACADE: PedidoFacade coordina servicios");
             System.out.println("ADAPTER: FacturaAdapter integra sistema legacy");
-            System.out.println("STRATEGY: Cálculo dinámico de impuestos");
+            System.out.println("STRATEGY: Calculo dinamico de impuestos");
             System.out.println("REPOSITORY: Persistencia de pedidos");
-            System.out.println("OBSERVER: Notificaciones automáticas a 3 observadores");
+            System.out.println("OBSERVER: Notificaciones automaticas a 3 observadores");
             System.out.println("THREADS: 3 hilos trabajando concurrentemente");
             System.out.println("  - Thread 1: Procesador de Pedidos");
             System.out.println("  - Thread 2: Generador de Facturas");
