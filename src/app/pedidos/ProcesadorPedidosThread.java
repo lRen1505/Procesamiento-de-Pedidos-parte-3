@@ -64,4 +64,8 @@ public class ProcesadorPedidosThread extends Thread{
             e.printStackTrace();
         }
     }
+    public void detener() {
+        activo = false;
+        this.interrupt();
+    }
 }
