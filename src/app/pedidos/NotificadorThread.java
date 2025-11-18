@@ -51,4 +51,8 @@ public class NotificadorThread extends Thread{
             e.printStackTrace();
         }
     }
+        public void detener() {
+        activo = false;
+        this.interrupt();
+        }
 }
