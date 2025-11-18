@@ -23,7 +23,7 @@ public class NotificadorThread extends Thread{
                 // Toma una notificación de la cola
                 String mensaje = notificacionesPendientes.take();
                 
-                System.out.println("\n [" + getName() + "] Enviando notificacion...");
+                System.out.println("\n " + getName() + " Enviando notificacion...");
                 
                 // Simular tiempo de envío (email, SMS, etc.)
                 Thread.sleep(500);
@@ -34,14 +34,14 @@ public class NotificadorThread extends Thread{
                 System.out.println("Push notificacion enviada");
                 System.out.println("Mensaje: " + mensaje);
                 
-                System.out.println("\n [" + getName() + "] Notificaciones enviadas\n");
+                System.out.println("\n " + getName() + " Notificaciones enviadas\n");
                 
             } catch (InterruptedException e) {
-                System.out.println("\n[" + getName() + "] Interrumpido");
+                System.out.println("\n " + getName() + " Interrumpido");
                 activo = false;
             }
         }
-         System.out.println("\n [" + getName() + "] Finalizado\n");
+         System.out.println("\n " + getName() + " Finalizado\n");
     }
     public void agregarNotificacion(String mensaje) {
         try {
