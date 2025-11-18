@@ -17,4 +17,43 @@ public class ProcesadorPedidosThread extends Thread{
         this.pedidosPendientes = new LinkedBlockingQueue<>();
         this.setName("Thread-ProcesadorPedidos");
     }
+    @Override
+    public void run() {
+        System.out.println("\n [" + getName() + "] Iniciado - Esperando pedidos...\n");
+        
+        while (activo) {
+            try {
+                // Toma un pedido de la cola (espera si no hay)
+                DatosPedido datos = pedidosPendientes.take();
+                
+                System.out.println("\n [" + getName() + "] Procesando pedido de: " + datos.getCliente());
+                
+                // Notificar que el pedido está siendo procesado
+                observable.notificarObservadores("PEDIDO_PROCESADO", datos.toString());
+                
+                // Simular tiempo de procesamiento
+                Thread.sleep(1000);
+                
+                // Procesar el pedido usando el Facade
+                String resultado = pedidoFacade.procesarPedido(
+                    datos.getCliente(), 
+                    datos.getProducto(), 
+                    datos.getCantidad()
+                );
+                
+                // Notificar que el pedido fue creado
+                observable.notificarObservadores("PEDIDO_CREADO", datos.toString());
+                
+                System.out.println("\n [" + getName() + "] ✓ Pedido completado\n");
+                System.out.println(resultado);
+                
+            } catch (InterruptedException e) {
+                System.out.println("\n [" + getName() + "] Interrumpido");
+                activo = false;
+                // Opcional: break;
+            }
+        }
+        
+        System.out.println("\n🧵 [" + getName() + "] Finalizado\n");
+    }
 }
