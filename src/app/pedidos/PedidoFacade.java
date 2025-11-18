@@ -6,7 +6,7 @@ import java.util.List;
 public class PedidoFacade {
     private ValidacionService validacionService;
     private CalculoService calculoService;
-    private RegistroService registroService;
+    
     private ComprobanteService comprobanteService;
     private FacturaService facturaService;
     private PedidoRepository pedidoRepository;
@@ -16,7 +16,6 @@ public class PedidoFacade {
     public PedidoFacade(FacturaService facturaService, PedidoRepository pedidoRepository) {
         this.validacionService = new ValidacionService();
         this.calculoService = new CalculoService();
-        this.registroService = new RegistroService();
         this.comprobanteService = new ComprobanteService();
         this.facturaService = facturaService;
         this.pedidoRepository = pedidoRepository;
