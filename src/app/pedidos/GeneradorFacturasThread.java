@@ -24,6 +24,8 @@ public class GeneradorFacturasThread extends Thread {
             DatosFactura datos = facturasPendientes.take();
             System.out.println("\n [" + getName() + "] Generando factura para: " + datos.getCliente());
             Thread.sleep(800);
+            facturaService.generarFactura(datos.getCliente(), datos.getTotal());
+            observable.notificarObservadores("FACTURA_GENERADA", datos.toString());
         }catch(InterruptedException e){
         }
       }
