@@ -19,14 +19,14 @@ public class ProcesadorPedidosThread extends Thread{
     }
     @Override
     public void run() {
-        System.out.println("\n [" + getName() + "] Iniciado - Esperando pedidos...\n");
+        System.out.println("\n " + getName() + " Iniciado - Esperando pedidos...\n");
         
         while (activo) {
             try {
                 // Toma un pedido de la cola (espera si no hay)
                 DatosPedido datos = pedidosPendientes.take();
                 
-                System.out.println("\n [" + getName() + "] Procesando pedido de: " + datos.getCliente());
+                System.out.println("\n " + getName() + " Procesando pedido de: " + datos.getCliente());
                 
                 // Notificar que el pedido está siendo procesado
                 observable.notificarObservadores("PEDIDO_PROCESADO", datos.toString());
@@ -44,17 +44,17 @@ public class ProcesadorPedidosThread extends Thread{
                 // Notificar que el pedido fue creado
                 observable.notificarObservadores("PEDIDO_CREADO", datos.toString());
                 
-                System.out.println("\n [" + getName() + "] Pedido completado\n");
+                System.out.println("\n " + getName() + " Pedido completado\n");
                 System.out.println(resultado);
                 
             } catch (InterruptedException e) {
-                System.out.println("\n [" + getName() + "] Interrumpido");
+                System.out.println("\n " + getName() + " Interrumpido");
                 activo = false;
                 // Opcional: break;
             }
         }
         
-        System.out.println("\n [" + getName() + "] Finalizado\n");
+        System.out.println("\n " + getName() + " Finalizado\n");
     }
     public void agregarPedido(DatosPedido datos) {
         try{
