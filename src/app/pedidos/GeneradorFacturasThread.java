@@ -32,5 +32,6 @@ public class GeneradorFacturasThread extends Thread {
             activo = false;
         }
       }
+        System.out.println("\n [" + getName() + "] Finalizado\n");
     }
 }
