@@ -28,7 +28,7 @@ public class Main {
             observable.agregarObservador(logObserver);
             
             pedidoFacade.setObservable(observable);
-            System.out.println("\n Patrón Observer configurado\n");
+            System.out.println("\n Patron Observer configurado\n");
             System.out.println("=".repeat(70) + "\n");
             
             System.out.println("Creando Threads...\n");
@@ -51,17 +51,17 @@ public class Main {
             Thread.sleep(1000);
             
             System.out.println("Agregando pedidos a la cola de procesamiento...\n");
-            threadPedidos.agregarPedido(new DatosPedido("Juan Pérez", "Laptop HP", 2));
+            threadPedidos.agregarPedido(new DatosPedido("Juan Perez", "Laptop HP", 2));
             Thread.sleep(500);
-            threadPedidos.agregarPedido(new DatosPedido("María García", "Mouse Logitech", 3));
+            threadPedidos.agregarPedido(new DatosPedido("Maria García", "Mouse Logitech", 3));
             Thread.sleep(500);
-            threadPedidos.agregarPedido(new DatosPedido("Carlos López", "Teclado Mecánico", 1));
+            threadPedidos.agregarPedido(new DatosPedido("Carlos Lopez", "Teclado Mecanico", 1));
             
             System.out.println("\n Agregando facturas a la cola...\n");
             threadFacturas.agregarFactura(new DatosFactura("Ana Torres", 250.50));
             Thread.sleep(500);
             
-            threadFacturas.agregarFactura(new DatosFactura("Luis Ramírez", 180.00));
+            threadFacturas.agregarFactura(new DatosFactura("Luis Ramirez", 180.00));
             
             System.out.println("\n Agregando notificaciones a la cola...\n");
             threadNotificador.agregarNotificacion("Su pedido ha sido confirmado");
