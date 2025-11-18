@@ -16,4 +16,8 @@ public class GeneradorFacturasThread extends Thread {
         this.facturasPendientes = new LinkedBlockingQueue<>();
         this.setName("Thread-GeneradorFacturas");
     }
+    @Override
+    public void run() {
+    
+    }
 }
