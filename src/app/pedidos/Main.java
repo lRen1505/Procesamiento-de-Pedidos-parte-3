@@ -40,6 +40,10 @@ public class Main {
                 facturaService, observable);
                 
                 NotificadorThread threadNotificador = new NotificadorThread(observable);
+                
+            threadPedidos.start();
+            threadFacturas.start();
+            threadNotificador.start();
     }
     
     }
