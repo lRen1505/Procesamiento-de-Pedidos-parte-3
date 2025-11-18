@@ -1,6 +1,7 @@
 
 package app.pedidos;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
@@ -9,6 +10,7 @@ public class LogObserver implements Observer{
 
     @Override
     public void actualizar(String evento, String datos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      String timestamp = LocalDateTime.now().format(formatter);
+
     }
 }
