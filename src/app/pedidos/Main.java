@@ -26,6 +26,10 @@ public class Main {
             observable.agregarObservador(clienteObserver);
             observable.agregarObservador(inventarioObserver);
             observable.agregarObservador(logObserver);
+            
+            pedidoFacade.setObservable(observable);
+            System.out.println("\n✓ Patrón Observer configurado\n");
+            System.out.println("=".repeat(70) + "\n");
     }
     
     }
