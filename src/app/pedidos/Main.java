@@ -74,6 +74,11 @@ public class Main {
             System.out.println("=".repeat(70) + "\n");
             Thread.sleep(8000);
             
+            
+            System.out.println("\n" + "=".repeat(70));
+            System.out.println("Deteniendo threads...");
+            System.out.println("=".repeat(70) + "\n");
+            
     }catch(InterruptedException e){
     }
     
