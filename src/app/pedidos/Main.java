@@ -56,6 +56,7 @@ public class Main {
             threadPedidos.agregarPedido(new DatosPedido("María García", "Mouse Logitech", 3));
             Thread.sleep(500);
             threadPedidos.agregarPedido(new DatosPedido("Carlos López", "Teclado Mecánico", 1));
+    }catch(InterruptedException e){
     }
     
     }
